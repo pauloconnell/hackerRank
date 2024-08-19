@@ -1,16 +1,28 @@
 <script setup>
 import { defineModel } from '@vue/composition-api';
+import { ref } from 'vue';
 let bigCandles=0;
 const loading = ref(false);
+const inputCandleRef = ref(null);
 
-const candleBox = defineModel();
+const candleBoxModel = defineModel();
 const gotData = (data) =>{
 
 
-    console.log("got input:",candleBox.value)
-    let array = candleBox.value.split(" ").map(Number);
+    console.log("got input:",candleBoxModel.value)
+    let array = candleBoxModel.value.split(" ").map(Number);                                     // convert string input into array of numbers
     console.log("sending array", {array})
-    bigCandles = birthdayCakeCandles(array)
+    bigCandles = birthdayCakeCandles(array)                                                 // invoke logic to determine num of max sized candles
+
+    console.log("chars in input is ", candleBoxModel.value.length)
+    let minWidth = '170px';
+    if(candleBoxModel.value.length  > 22){
+        minWidth = `${candleBoxModel.value.length*7}px`;
+    } 
+    
+
+    inputCandleRef.value.style.width = minWidth ;                        // expand input box based on how many characters are in the input
+    console.log("width is ", inputCandleRef.value.style.width, candleBoxModel.value.length);
 }
 
 const birthdayCakeCandles = (candles) => {
@@ -45,26 +57,29 @@ const birthdayCakeCandles = (candles) => {
     }
     
     
-    //??if(candles[maxIndex]> 10000000) return undefined;
-    // for(let x=0; x<=maxIndex; x++){
-    //     console.log("max index ", maxIndex, "x is", x, "candle height is ", candles[maxIndex-x])
-    //     if(candles[maxIndex-x] == candles[maxIndex]){
-    //         totalCandles++;
-    //          console.log("Got Onemax index ", maxIndex, "x is", x, "total is ", totalCandles);
-    //     }
-    // }
-    // return totalCandles;
+  
 }
 </script>
+
+<!-- <style>
+.input-container {
+    display: flex;
+}
+input {
+    flex: 1;
+}
+</style> -->
 
 <template>
     <h1> Birthday Candles</h1>
     
-    <div>
+    
     Enter numbers to represent candle heights - the amount of the largest candles will be computed and output<br/>
-    <input type="text" id="candles" name="candles" v-model="candleBox" @input="gotData" >
+    <div class="input-container">
+        <input ref="inputCandleRef" type="text" id="candles" name="candles" v-model="candleBoxModel" @input="gotData" width="auto" >
+    </div>
     <div>
     Total of Bigest candles is: <span v-if="loading">Loading...</span> <span v-else> {{ bigCandles }} </span>
     </div>
-</div>
+
 </template>
