@@ -73,13 +73,16 @@ input {
 <template>
     <h1> Birthday Candles</h1>
     
+    <h3>You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. <br> Count how many candles are tallest.</h3>
     
-    Enter numbers to represent candle heights - the amount of the largest candles will be computed and output<br/>
     <div class="input-container">
+        <div>
+            Enter the heights of each candle on the cake
+        </div>
         <input ref="inputCandleRef" type="text" id="candles" name="candles" v-model="candleBoxModel" @input="gotData" width="auto" >
     </div>
     <div>
-    Total of Bigest candles is: <span v-if="loading">Loading...</span> <span v-else> {{ bigCandles }} </span>
+    Total number of Biggest candles is: <span v-if="loading">Loading...</span> <span v-else>{{ bigCandles }} </span>
     </div>
 
 </template>
