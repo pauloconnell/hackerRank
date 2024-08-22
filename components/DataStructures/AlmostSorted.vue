@@ -9,21 +9,19 @@ const inputBoxModel = defineModel();
 const gotData = (data) =>{
 
 
-    console.log("got input:",inputBoxModel.value)
-    let array = inputBoxModel.value.split(" ").map(Number);                                     // convert string input into array of numbers
-    console.log("sending array", {array})
+   // console.log("got input:",inputBoxModel.value)
+    let array = inputBoxModel.value.split(" ").map(Number);                              // convert string input into array of numbers
+   // console.log("sending array", {array})
     getSort.value = almostSorted(array);                                                 // invoke logic to determine answer
 
-                                                                                                // ensure input box scales with input size
-    console.log("chars in input is ", inputBoxModel.value.length)
+                                                                                      // ensure input box scales with input size
+   // console.log("chars in input is ", inputBoxModel.value.length)
     let minWidth = '170px';
-    if(inputBoxModel.value.length  > 22){
+    if(inputBoxModel.value.length  > 22){                             // after 22 characters, expand textbox  based on how many characters are in the input
         minWidth = `${inputBoxModel.value.length*7}px`;
     } 
-    
-
-    inputBoxRef.value.style.width = minWidth ;                        // expand input box based on how many characters are in the input
-    console.log("width is ", inputBoxRef.value.style.width, inputBoxModel.value.length);
+    inputBoxRef.value.style.width = minWidth ;                        // set expanded input box
+    //console.log("width is ", inputBoxRef.value.style.width, inputBoxModel.value.length);
 }
 
 function almostSorted(arr) {
@@ -113,7 +111,7 @@ Reverse one sub-segment.</h3>
         <input ref="inputBoxRef" type="text" id="candles" name="candles" v-model="inputBoxModel" @input="gotData" width="auto" >
     </div>
     <div>
-    Total number of ... is: <span v-if="loading">Loading...</span> <span v-else>{{ getSort }} </span>
+    Is Array sorted? If not how can it be sorted? <span v-if="loading">Loading...</span> <span v-else>{{ getSort }} </span>
     </div>
 
 </template>
