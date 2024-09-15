@@ -1,14 +1,20 @@
 <template>
   <div>
-    
+
     <div style="border: 1px solid #ccc; border-radius: 4px; padding-left: 5px;">
-    <DataStructuresBirthdayCandles  />
+      <DataStructuresBirthdayCandles />
     </div>
-    <hr></hr>
+    <hr>
+    </hr>
     <div style="border: 1px solid #ccc; border-radius: 4px; padding-left: 5px;">
-    <DataStructuresAlmostSorted  />
-      </div>
-   <!-- 
+      <DataStructuresAlmostSorted />
+    </div>
+    <div style="border: 1px solid #ccc; border-radius: 4px; padding-left: 5px;">
+      <AiBox />
+    </div>
+
+
+    <!-- 
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
     -->
