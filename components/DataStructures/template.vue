@@ -6,6 +6,12 @@ const loading = ref(false);
 const inputBoxRef = ref(null);
 
 const inputBoxModel = defineModel();
+
+
+
+
+
+
 const gotData = (data) =>{
 
 
