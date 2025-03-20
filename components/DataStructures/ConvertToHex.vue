@@ -80,7 +80,7 @@ input {
 </style> -->
 
 <template>
-  <h1>Name</h1>
+  <h1>Convert To Hex</h1>
 
   <h3>Instructions.</h3>
 

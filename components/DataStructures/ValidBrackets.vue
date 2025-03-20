@@ -74,7 +74,7 @@ input {
 </style> -->
 
 <template>
-    <h1>Name</h1>
+    <h1>Valid Brackets</h1>
 
     <h3>Instructions.</h3>
 
