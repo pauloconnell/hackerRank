@@ -17,6 +17,10 @@
       <DataStructuresConvertToHex />
     </div>
 
+    <div class="card">
+      <DataStructuresValidBrackets />
+    </div>
+
 
     <!-- 
     <NuxtRouteAnnouncer />
