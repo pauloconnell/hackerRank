@@ -21,6 +21,9 @@
       <DataStructuresValidBrackets />
     </div>
 
+    <div class="card">
+      <DataStructuresSnailTraverse />
+    </div>
 
     <!-- 
     <NuxtRouteAnnouncer />
