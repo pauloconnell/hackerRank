@@ -6,6 +6,11 @@
     </div>
     <hr>
     </hr>
+    <div class="card">
+      <PracticeKataReturnDomain />
+    </div>
+    <hr>
+  </hr>
     <div style="border: 1px solid #ccc; border-radius: 4px; padding-left: 5px;">
       <DataStructuresAlmostSorted />
     </div>
