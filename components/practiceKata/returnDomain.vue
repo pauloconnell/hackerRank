@@ -68,10 +68,10 @@ input {
 </style> -->
 
 <template>
-    <h1>Extract domain from URL</h1>
+    <h1>Extract domain from any URL</h1>
     
     <h3>Instructions.</h3>
-    <p> Enter URL and the domain name will be extracted and printed in space allocated.</p>
+    <p> Enter any URL and the domain name will be extracted and printed in space allocated.</p>
     <div class="input-container">
         <div>
             Enter the URL:
