@@ -37,11 +37,11 @@ const gotData = (data) =>{
 
 
 function domainName(url){
-    //your code here
-    console.log( "in function, got url: ", {url})
+    
+    //console.log( "in function, got url: ", {url})
     let arr = url.split('.');
     
-    console.log({arr})
+    //console.log({arr})
     if (arr.length>1){
       if( arr[0] == "www" || arr[0]=='http://www' || arr[0] == 'https://www') {
         //console.log("found ", arr[1])
