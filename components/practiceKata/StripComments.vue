@@ -68,18 +68,18 @@ input {
 </style> -->
 
 <template>
-    <h1>Name</h1>
+    <h1>Strip Comments</h1>
     
     <h3>Instructions.</h3>
     
     <div class="input-container">
         <div>
-            Enter the ...
+            Enter your code with comments
         </div>
         <input ref="inputBoxRef" type="text" id="candles" name="candles" v-model="inputBoxModel" @input="gotData" width="auto" >
     </div>
     <div>
-    Total number of ... is: <span v-if="loading">Loading...</span> <span v-else>{{ bigCandles }} </span>
+    Comments are removed: <span v-if="loading">Loading...</span> <span v-else>{{ bigCandles }} </span>
     </div>
 
 </template>
